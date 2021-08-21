@@ -4,7 +4,7 @@ from wp_detector import url_check
 app = Flask(__name__)
 
 @app.route('/')
-def hello(name=None):
+def hello():
     return render_template('index.html')
 
 @app.route('/url',methods=["POST"])
