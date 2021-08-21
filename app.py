@@ -28,4 +28,4 @@ def uploadFiles():
       return send_file(UPLOAD_FOLDER + filename + "-out.csv", as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
