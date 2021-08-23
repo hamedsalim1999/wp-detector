@@ -27,7 +27,30 @@ $('#process-file-button').on('click', function (e) {
             download('test.csv',response);
         },
         error: function (err) {
-            console.log(err);
+            alert(err);
+        }
+    });
+});
+
+$('#process-url-button').on('click', function (e) {
+    let files = new FormData(), // you can consider this as 'data bag'
+        url = '/url';
+
+        var data = {
+            url: $("#url").val(),
+        }
+
+    $.ajax({
+        type: 'post',
+        url: url,
+        dataType: "json",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: function (response) {
+            alert(JSON.stringify(response));
+        },
+        error: function (err) {
+            alert(err);
         }
     });
 });
